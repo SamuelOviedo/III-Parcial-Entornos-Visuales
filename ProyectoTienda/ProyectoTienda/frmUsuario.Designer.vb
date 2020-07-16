@@ -22,7 +22,7 @@ Partial Class frmUsuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -33,12 +33,12 @@ Partial Class frmUsuario
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbRol = New System.Windows.Forms.ComboBox()
         Me.txtCorreo = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPsw = New System.Windows.Forms.TextBox()
+        Me.txtUserName = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -48,20 +48,20 @@ Partial Class frmUsuario
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'txtCodigo
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(121, 54)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(190, 24)
-        Me.TextBox1.TabIndex = 0
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCodigo.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(156, 56)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(112, 24)
+        Me.txtCodigo.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Fugaz One", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(38, 56)
+        Me.Label1.Location = New System.Drawing.Point(51, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 29)
         Me.Label1.TabIndex = 1
@@ -79,6 +79,7 @@ Partial Class frmUsuario
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox1.Controls.Add(Me.Panel7)
         Me.GroupBox1.Controls.Add(Me.Panel6)
         Me.GroupBox1.Controls.Add(Me.Panel5)
@@ -86,12 +87,12 @@ Partial Class frmUsuario
         Me.GroupBox1.Controls.Add(Me.Panel3)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.cmbRol)
         Me.GroupBox1.Controls.Add(Me.txtCorreo)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtPsw)
+        Me.GroupBox1.Controls.Add(Me.txtUserName)
+        Me.GroupBox1.Controls.Add(Me.txtApellido)
+        Me.GroupBox1.Controls.Add(Me.txtNombre)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
@@ -99,11 +100,11 @@ Partial Class frmUsuario
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtCodigo)
         Me.GroupBox1.Font = New System.Drawing.Font("Fugaz One", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(24, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(382, 456)
+        Me.GroupBox1.Size = New System.Drawing.Size(458, 458)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos usuario"
@@ -119,9 +120,9 @@ Partial Class frmUsuario
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel6.Location = New System.Drawing.Point(121, 384)
+        Me.Panel6.Location = New System.Drawing.Point(121, 397)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(190, 5)
+        Me.Panel6.Size = New System.Drawing.Size(278, 5)
         Me.Panel6.TabIndex = 19
         '
         'Panel5
@@ -143,9 +144,9 @@ Partial Class frmUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel3.Location = New System.Drawing.Point(134, 194)
+        Me.Panel3.Location = New System.Drawing.Point(133, 194)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(190, 5)
+        Me.Panel3.Size = New System.Drawing.Size(200, 5)
         Me.Panel3.TabIndex = 16
         '
         'Panel2
@@ -153,77 +154,77 @@ Partial Class frmUsuario
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel2.Location = New System.Drawing.Point(144, 137)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(190, 5)
+        Me.Panel2.Size = New System.Drawing.Size(204, 5)
         Me.Panel2.TabIndex = 15
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel1.Location = New System.Drawing.Point(121, 75)
+        Me.Panel1.Location = New System.Drawing.Point(156, 77)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(190, 5)
+        Me.Panel1.Size = New System.Drawing.Size(112, 5)
         Me.Panel1.TabIndex = 14
         '
-        'ComboBox1
+        'cmbRol
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"admin", "cajero"})
-        Me.ComboBox1.Location = New System.Drawing.Point(133, 316)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(165, 30)
-        Me.ComboBox1.TabIndex = 13
+        Me.cmbRol.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbRol.FormattingEnabled = True
+        Me.cmbRol.Items.AddRange(New Object() {"admin", "cajero"})
+        Me.cmbRol.Location = New System.Drawing.Point(133, 316)
+        Me.cmbRol.Name = "cmbRol"
+        Me.cmbRol.Size = New System.Drawing.Size(165, 30)
+        Me.cmbRol.TabIndex = 13
         '
         'txtCorreo
         '
         Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCorreo.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorreo.Location = New System.Drawing.Point(121, 360)
+        Me.txtCorreo.Location = New System.Drawing.Point(120, 373)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(190, 24)
+        Me.txtCorreo.Size = New System.Drawing.Size(278, 24)
         Me.txtCorreo.TabIndex = 12
         '
-        'TextBox5
+        'txtPsw
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(172, 270)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(190, 24)
-        Me.TextBox5.TabIndex = 11
+        Me.txtPsw.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPsw.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPsw.Location = New System.Drawing.Point(172, 270)
+        Me.txtPsw.Name = "txtPsw"
+        Me.txtPsw.Size = New System.Drawing.Size(190, 24)
+        Me.txtPsw.TabIndex = 11
         '
-        'TextBox4
+        'txtUserName
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(133, 217)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(190, 24)
-        Me.TextBox4.TabIndex = 10
+        Me.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtUserName.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUserName.Location = New System.Drawing.Point(133, 217)
+        Me.txtUserName.Name = "txtUserName"
+        Me.txtUserName.Size = New System.Drawing.Size(190, 24)
+        Me.txtUserName.TabIndex = 10
         '
-        'TextBox3
+        'txtApellido
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(134, 168)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(190, 24)
-        Me.TextBox3.TabIndex = 9
+        Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtApellido.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApellido.Location = New System.Drawing.Point(134, 168)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(200, 24)
+        Me.txtApellido.TabIndex = 9
         '
-        'TextBox2
+        'txtNombre
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(144, 113)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(190, 24)
-        Me.TextBox2.TabIndex = 8
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombre.Font = New System.Drawing.Font("Rockwell", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(144, 113)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(204, 24)
+        Me.txtNombre.TabIndex = 8
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Fugaz One", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(39, 360)
+        Me.Label7.Location = New System.Drawing.Point(38, 373)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(79, 29)
         Me.Label7.TabIndex = 7
@@ -271,40 +272,44 @@ Partial Class frmUsuario
         '
         'btnGuardar
         '
-        Me.btnGuardar.Font = New System.Drawing.Font("Shrikhand", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(24, 498)
+        Me.btnGuardar.BackColor = System.Drawing.Color.Gray
+        Me.btnGuardar.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(24, 491)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(136, 37)
+        Me.btnGuardar.Size = New System.Drawing.Size(154, 48)
         Me.btnGuardar.TabIndex = 4
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(476, 547)
+        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.ClientSize = New System.Drawing.Size(529, 551)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmUsuario"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Registro usuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtCodigo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbRol As ComboBox
     Friend WithEvents txtCorreo As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPsw As TextBox
+    Friend WithEvents txtUserName As TextBox
+    Friend WithEvents txtApellido As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
