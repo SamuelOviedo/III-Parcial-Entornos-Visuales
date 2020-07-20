@@ -45,6 +45,10 @@ Partial Class frmUsuario
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,7 +108,7 @@ Partial Class frmUsuario
         Me.GroupBox1.Font = New System.Drawing.Font("Fugaz One", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(24, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(458, 458)
+        Me.GroupBox1.Size = New System.Drawing.Size(458, 459)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos usuario"
@@ -112,7 +116,7 @@ Partial Class frmUsuario
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel7.Location = New System.Drawing.Point(133, 341)
+        Me.Panel7.Location = New System.Drawing.Point(133, 344)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(166, 5)
         Me.Panel7.TabIndex = 20
@@ -144,7 +148,7 @@ Partial Class frmUsuario
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel3.Location = New System.Drawing.Point(133, 194)
+        Me.Panel3.Location = New System.Drawing.Point(133, 193)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(200, 5)
         Me.Panel3.TabIndex = 16
@@ -273,21 +277,73 @@ Partial Class frmUsuario
         'btnGuardar
         '
         Me.btnGuardar.BackColor = System.Drawing.Color.Gray
-        Me.btnGuardar.Font = New System.Drawing.Font("Impact", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(24, 491)
+        Me.btnGuardar.Location = New System.Drawing.Point(24, 504)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(154, 48)
+        Me.btnGuardar.Size = New System.Drawing.Size(148, 35)
         Me.btnGuardar.TabIndex = 4
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.Gray
+        Me.btnLimpiar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.White
+        Me.btnLimpiar.Location = New System.Drawing.Point(196, 504)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(148, 35)
+        Me.btnLimpiar.TabIndex = 5
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(369, 504)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(148, 35)
+        Me.btnEliminar.TabIndex = 6
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.BackColor = System.Drawing.Color.Gray
+        Me.btnActualizar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Location = New System.Drawing.Point(275, 545)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(148, 35)
+        Me.btnActualizar.TabIndex = 7
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.Gray
+        Me.btnBuscar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.Location = New System.Drawing.Point(89, 545)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(148, 35)
+        Me.btnBuscar.TabIndex = 8
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(529, 551)
+        Me.ClientSize = New System.Drawing.Size(530, 590)
+        Me.Controls.Add(Me.btnBuscar)
+        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmUsuario"
@@ -322,4 +378,8 @@ Partial Class frmUsuario
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel7 As Panel
+    Friend WithEvents btnLimpiar As Button
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents btnBuscar As Button
 End Class

@@ -47,4 +47,84 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function eliminarUsuario(idUsuario As Integer, rol As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idUsuario", idUsuario)
+            cmb.Parameters.AddWithValue("@rol", rol)
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+
+    Public Function buscarUsuario(userName As String) As Boolean
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("busquedaUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@userName", userName)
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+
+
+    Public Function actualizarUsuario(idUsuario As Integer, nombre As String, apellido As String, userName As String, psw As String, correo As String, rol As String) As Boolean
+
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("modificarUsuario", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario)
+            cmd.Parameters.AddWithValue("@nombre", nombre)
+            cmd.Parameters.AddWithValue("@apellido", apellido)
+            cmd.Parameters.AddWithValue("@userName", userName)
+            cmd.Parameters.AddWithValue("@psw", psw)
+            cmd.Parameters.AddWithValue("@correo", correo)
+            cmd.Parameters.AddWithValue("@rol", rol)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+
 End Class
