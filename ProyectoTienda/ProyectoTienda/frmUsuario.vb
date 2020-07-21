@@ -70,7 +70,6 @@ Public Class frmUsuario
         Try
             If (conexion.buscarUsuario(userName) = True) Then
                 MsgBox("Usuario encontrado")
-                limpiar()
             Else
                 MsgBox("No se ha encontrado ningun usuario")
                 limpiar()
@@ -125,4 +124,5 @@ Public Class frmUsuario
         actualizarUsuario()
 
     End Sub
+
 End Class

@@ -49,7 +49,11 @@ Partial Class frmUsuario
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCodigo
@@ -108,7 +112,7 @@ Partial Class frmUsuario
         Me.GroupBox1.Font = New System.Drawing.Font("Fugaz One", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(24, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(458, 459)
+        Me.GroupBox1.Size = New System.Drawing.Size(449, 453)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos usuario"
@@ -334,12 +338,33 @@ Partial Class frmUsuario
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
+        'dgvUsuarios
+        '
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Location = New System.Drawing.Point(14, 36)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.RowHeadersWidth = 51
+        Me.dgvUsuarios.RowTemplate.Height = 24
+        Me.dgvUsuarios.Size = New System.Drawing.Size(582, 267)
+        Me.dgvUsuarios.TabIndex = 9
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.GroupBox2.Controls.Add(Me.dgvUsuarios)
+        Me.GroupBox2.Location = New System.Drawing.Point(492, 104)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(607, 333)
+        Me.GroupBox2.TabIndex = 10
+        Me.GroupBox2.TabStop = False
+        '
         'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(530, 590)
+        Me.ClientSize = New System.Drawing.Size(1111, 590)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnEliminar)
@@ -351,6 +376,8 @@ Partial Class frmUsuario
         Me.Text = "Registro usuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -382,4 +409,6 @@ Partial Class frmUsuario
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents dgvUsuarios As DataGridView
+    Friend WithEvents GroupBox2 As GroupBox
 End Class
