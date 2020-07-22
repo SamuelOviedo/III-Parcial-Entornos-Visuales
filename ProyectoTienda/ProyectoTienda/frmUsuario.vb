@@ -1,7 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class frmUsuario
     Dim conexion As New conexion()
-    Dim dt As DataTable
+    Dim dt As New DataTable
 
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
@@ -19,15 +19,27 @@ Public Class frmUsuario
 
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Function convertirMayusMin(ByVal cambiatext As String) As String
+        Dim a As String = StrConv(cambiatext, VbStrConv.ProperCase)
+        Return a
+    End Function
+
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Dim idUsuario As Integer
-        Dim nombre, apellido, userName, psw, correo, rol, estado As String
+        Dim nombre, apellido, userName, psw, correo, minCorreo As String
+        Dim rol, estado As Char
+
         idUsuario = txtCodigo.Text
-        nombre = txtNombre.Text
-        apellido = txtApellido.Text
+
+        nombre = convertirMayusMin(Me.txtNombre.Text)
+        apellido = convertirMayusMin(Me.txtApellido.Text)
+
         userName = txtUserName.Text
         psw = txtPsw.Text
-        correo = txtCorreo.Text
+
+        minCorreo = LCase(txtCorreo.Text)
+        correo = minCorreo
+
         estado = "activo"
         rol = cmbRol.Text
 
@@ -52,7 +64,7 @@ Public Class frmUsuario
 
     Private Sub eliminarUsuario()
         Dim idUsuario As Integer
-        Dim rol As String
+        Dim rol As Char
         idUsuario = txtCodigo.Text
         rol = cmbRol.Text
         Try
@@ -71,18 +83,20 @@ Public Class frmUsuario
     Private Sub BuscarUsuario()
         Dim userName As String
         userName = txtUserName.Text
-        Try
-            dt = conexion.BuscarUsuario(userName)
-            If dt.Rows.Count <> 0 Then
 
+        Try
+            dt = conexion.buscarUsuario(dgvUsuarios, userName)
+
+            If dt.Rows.Count <> 0 Then
                 MessageBox.Show("Usuario encontrado", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                dgvUsuarios.DataSource = dt
-                txtUserName.Text = ""
+                conexion.conexion.Close()
+
             Else
                 MessageBox.Show("Usuario no encontrado", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 dgvUsuarios.DataSource = Nothing
                 txtUserName.Text = ""
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -90,14 +104,20 @@ Public Class frmUsuario
 
     Private Sub actualizarUsuario()
         Dim idUsuario As Integer
-        Dim nombre, apellido, userName, psw, correo, rol, estado As String
+        Dim nombre, apellido, userName, psw, correo, minCorreo As String
+        Dim rol, estado As Char
 
         idUsuario = txtCodigo.Text
-        nombre = txtNombre.Text
-        apellido = txtApellido.Text
+
+        nombre = convertirMayusMin(Me.txtNombre.Text)
+        apellido = convertirMayusMin(Me.txtApellido.Text)
+
         userName = txtUserName.Text
         psw = txtPsw.Text
-        correo = txtCorreo.Text
+
+        minCorreo = LCase(txtCorreo.Text)
+        correo = minCorreo
+
         estado = "activo"
         rol = cmbRol.Text
 
@@ -123,7 +143,7 @@ Public Class frmUsuario
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        buscarUsuario()
+        BuscarUsuario()
 
     End Sub
 

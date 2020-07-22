@@ -44,7 +44,7 @@ Partial Class frmUsuario
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -278,26 +278,26 @@ Partial Class frmUsuario
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Apellido"
         '
-        'btnGuardar
+        'btnRegistrar
         '
-        Me.btnGuardar.BackColor = System.Drawing.Color.Gray
-        Me.btnGuardar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.ForeColor = System.Drawing.Color.White
-        Me.btnGuardar.Location = New System.Drawing.Point(24, 504)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(148, 35)
-        Me.btnGuardar.TabIndex = 4
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
+        Me.btnRegistrar.BackColor = System.Drawing.Color.Gray
+        Me.btnRegistrar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.Location = New System.Drawing.Point(42, 495)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(148, 42)
+        Me.btnRegistrar.TabIndex = 4
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = False
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.BackColor = System.Drawing.Color.Gray
+        Me.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnLimpiar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
-        Me.btnLimpiar.Location = New System.Drawing.Point(196, 504)
+        Me.btnLimpiar.Location = New System.Drawing.Point(706, 443)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(148, 35)
+        Me.btnLimpiar.Size = New System.Drawing.Size(176, 42)
         Me.btnLimpiar.TabIndex = 5
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = False
@@ -307,9 +307,9 @@ Partial Class frmUsuario
         Me.btnEliminar.BackColor = System.Drawing.Color.Gray
         Me.btnEliminar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(369, 504)
+        Me.btnEliminar.Location = New System.Drawing.Point(242, 495)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(148, 35)
+        Me.btnEliminar.Size = New System.Drawing.Size(148, 42)
         Me.btnEliminar.TabIndex = 6
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
@@ -319,9 +319,9 @@ Partial Class frmUsuario
         Me.btnActualizar.BackColor = System.Drawing.Color.Gray
         Me.btnActualizar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Location = New System.Drawing.Point(275, 545)
+        Me.btnActualizar.Location = New System.Drawing.Point(345, 543)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(148, 35)
+        Me.btnActualizar.Size = New System.Drawing.Size(148, 42)
         Me.btnActualizar.TabIndex = 7
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = False
@@ -331,9 +331,9 @@ Partial Class frmUsuario
         Me.btnBuscar.BackColor = System.Drawing.Color.Gray
         Me.btnBuscar.Font = New System.Drawing.Font("Impact", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
-        Me.btnBuscar.Location = New System.Drawing.Point(89, 545)
+        Me.btnBuscar.Location = New System.Drawing.Point(106, 543)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(148, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(148, 42)
         Me.btnBuscar.TabIndex = 8
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
@@ -369,7 +369,7 @@ Partial Class frmUsuario
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnLimpiar)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -398,7 +398,7 @@ Partial Class frmUsuario
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnRegistrar As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel4 As Panel
