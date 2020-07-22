@@ -1,6 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class frmUsuario
     Dim conexion As New conexion()
+    Dim dt As DataTable
+
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
     End Function
@@ -13,6 +15,7 @@ Public Class frmUsuario
         txtPsw.Clear()
         txtCorreo.Clear()
         cmbRol.SelectedIndex = -1
+        dgvUsuarios.Columns.Clear()
 
     End Sub
 
@@ -54,56 +57,60 @@ Public Class frmUsuario
         rol = cmbRol.Text
         Try
             If (conexion.eliminarUsuario(idUsuario, rol)) Then
-                MsgBox("Dado de baja")
+                MessageBox.Show("Usuario dado de baja", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Else
-                MsgBox("Error al dar de baja usuario")
+                MessageBox.Show("Error al dar de baja usuario", "Eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub buscarUsuario()
+    Private Sub BuscarUsuario()
         Dim userName As String
-        userName = txtNombre.Text
-
+        userName = txtUserName.Text
         Try
-            If (conexion.buscarUsuario(userName) = True) Then
-                MsgBox("Usuario encontrado")
+            dt = conexion.BuscarUsuario(userName)
+            If dt.Rows.Count <> 0 Then
+
+                MessageBox.Show("Usuario encontrado", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                dgvUsuarios.DataSource = dt
+                txtUserName.Text = ""
             Else
-                MsgBox("No se ha encontrado ningun usuario")
-                limpiar()
+                MessageBox.Show("Usuario no encontrado", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                dgvUsuarios.DataSource = Nothing
+                txtUserName.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            limpiar()
         End Try
-
     End Sub
 
     Private Sub actualizarUsuario()
         Dim idUsuario As Integer
-        Dim nombre, apellido, userName, psw, correo, rol As String
+        Dim nombre, apellido, userName, psw, correo, rol, estado As String
+
         idUsuario = txtCodigo.Text
         nombre = txtNombre.Text
         apellido = txtApellido.Text
         userName = txtUserName.Text
-
         psw = txtPsw.Text
         correo = txtCorreo.Text
+        estado = "activo"
         rol = cmbRol.Text
 
         Try
-            If conexion.actualizarUsuario(idUsuario, nombre, apellido, userName, psw, correo, rol) = True Then
-                MessageBox.Show("Actualizado correctamente", "Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If conexion.actualizarUsuario(idUsuario, nombre, apellido, userName, psw, correo, rol, estado) Then
+                MessageBox.Show("Usuario actualizado correctamente", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 limpiar()
             Else
-                MessageBox.Show("Algo salió mal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                limpiar()
+                MessageBox.Show("Error al actualizar usuario", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.conexion.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            limpiar()
         End Try
     End Sub
 
@@ -125,4 +132,9 @@ Public Class frmUsuario
 
     End Sub
 
+    Private Sub dgvUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellContentClick
+        txtUserName.Text = dgvUsuarios.CurrentRow.Cells(1).Value.ToString
+        txtCorreo.Text = dgvUsuarios.CurrentRow.Cells(4).Value.ToString
+
+    End Sub
 End Class

@@ -72,7 +72,7 @@ Public Class conexion
 
     End Function
 
-    Public Function buscarUsuario(userName As String) As Boolean
+    Public Function BuscarUsuario(userName As String)
 
         Try
             conexion.Open()
@@ -80,51 +80,49 @@ Public Class conexion
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@userName", userName)
 
-            If cmb.ExecuteNonQuery <> 0 Then
-                Return True
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
             Else
-                Return False
+                Return Nothing
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return False
+            Return Nothing
         Finally
             conexion.Close()
-
         End Try
-
     End Function
 
-
-    Public Function actualizarUsuario(idUsuario As Integer, nombre As String, apellido As String, userName As String, psw As String, correo As String, rol As String) As Boolean
-
+    Public Function actualizarUsuario(idUsuario As Integer, nombre As String, apellido As String,
+                                      userName As String, psw As String, correo As String, rol As String, estado As String)
         Try
             conexion.Open()
-            Dim cmd As New SqlCommand("modificarUsuario", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@idUsuario", idUsuario)
-            cmd.Parameters.AddWithValue("@nombre", nombre)
-            cmd.Parameters.AddWithValue("@apellido", apellido)
-            cmd.Parameters.AddWithValue("@userName", userName)
-            cmd.Parameters.AddWithValue("@psw", psw)
-            cmd.Parameters.AddWithValue("@correo", correo)
-            cmd.Parameters.AddWithValue("@rol", rol)
+            cmb = New SqlCommand("modificarUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idUsuario", idUsuario)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+            cmb.Parameters.AddWithValue("@nombreUsuario", userName)
+            cmb.Parameters.AddWithValue("@psw", psw)
+            cmb.Parameters.AddWithValue("@correo", correo)
+            cmb.Parameters.AddWithValue("@rol", rol)
+            cmb.Parameters.AddWithValue("@estado", estado)
 
-            If cmd.ExecuteNonQuery Then
+            If cmb.ExecuteNonQuery Then
                 Return True
             Else
                 Return False
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
         Finally
             conexion.Close()
-
         End Try
-
     End Function
 
 End Class
